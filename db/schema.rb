@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180309023055) do
+ActiveRecord::Schema.define(version: 20180312031731) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 20180309023055) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
+  create_table "coaching_requests", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "submitted_at"
+    t.text     "description"
+    t.string   "status"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["user_id"], name: "index_coaching_requests_on_user_id"
+  end
+
   create_table "companies", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -37,10 +47,30 @@ ActiveRecord::Schema.define(version: 20180309023055) do
 
   create_table "inquiries", force: :cascade do |t|
     t.text     "description"
-    t.integer  "user_id"
+    t.integer  "company_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["user_id"], name: "index_inquiries_on_user_id"
+    t.index ["company_id"], name: "index_inquiries_on_company_id"
+  end
+
+  create_table "speaking_requests", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "event_name"
+    t.datetime "event_date"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_speaking_requests_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "age"
+    t.string   "industry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "phone"
   end
 
 end

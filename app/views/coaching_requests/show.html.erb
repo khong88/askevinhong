@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @coaching_request.user %>
+</p>
+
+<p>
+  <strong>Submitted at:</strong>
+  <%= @coaching_request.submitted_at %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @coaching_request.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @coaching_request.status %>
+</p>
+
+<%= link_to 'Edit', edit_coaching_request_path(@coaching_request) %> |
+<%= link_to 'Back', coaching_requests_path %>

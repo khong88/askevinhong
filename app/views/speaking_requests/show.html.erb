@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @speaking_request.user.name %>
+</p>
+
+<p>
+  <strong>User Email:</strong>
+  <%= @speaking_request.user.email %>
+</p>
+
+<p>
+  <strong>Event name:</strong>
+  <%= @speaking_request.event_name %>
+</p>
+
+<p>
+  <strong>Event date:</strong>
+  <%= @speaking_request.event_date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @speaking_request.description %>
+</p>
+
+<%= link_to 'Edit', edit_speaking_request_path(@speaking_request) %> |
+<%= link_to 'Back', speaking_requests_path %>

@@ -1,0 +1,2 @@
+module SpeakingRequestsHelper
+end
