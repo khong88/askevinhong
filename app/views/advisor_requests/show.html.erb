@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @advisor_request.user %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @advisor_request.company %>
+</p>
+
+<p>
+  <strong>Submitted at:</strong>
+  <%= @advisor_request.submitted_at %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @advisor_request.description %>
+</p>
+
+<p>
+  <strong>Industry:</strong>
+  <%= @advisor_request.industry %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @advisor_request.status %>
+</p>
+
+<%= link_to 'Edit', edit_advisor_request_path(@advisor_request) %> |
+<%= link_to 'Back', advisor_requests_path %>

@@ -1,0 +1,2 @@
+module SwagRequestsHelper
+end

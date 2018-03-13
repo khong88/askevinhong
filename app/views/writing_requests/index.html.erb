@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Writing Requests</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>User Name</th>
+      <th>User Email</th>
+      <th>User Phone</th>
+      <th>Company Name</th>
+      <th>Company Size</th>
+      <th>Company Industry</th>
+      <th>Type</th>
+      <th>Submitted at</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @writing_requests.each do |writing_request| %>
+      <tr>
+        <td><%= writing_request.user.name %></td>
+        <td><%= writing_request.user.email %></td>
+        <td><%= writing_request.user.phone %></td>
+        <td><%= writing_request.company.name %></td>
+        <td><%= writing_request.company.size %></td>
+        <td><%= writing_request.company.industry %></td>
+        <td><%= writing_request.writing_type %></td>
+        <td><%= writing_request.submitted_at %></td>
+        <td><%= writing_request.description %></td>
+        <td><%= link_to 'Show', writing_request %></td>
+        <td><%= link_to 'Edit', edit_writing_request_path(writing_request) %></td>
+        <td><%= link_to 'Destroy', writing_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Writing Request', new_writing_request_path %>

@@ -2,12 +2,15 @@
 
 <h1>Coaching Requests</h1>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
-      <th>User</th>
+      <th>User Name</th>
+      <th>User Email</th>
+      <th>User Phone</th>
       <th>Submitted at</th>
       <th>Description</th>
+      <th>Type</th>
       <th>Status</th>
       <th colspan="3"></th>
     </tr>
@@ -16,9 +19,12 @@
   <tbody>
     <% @coaching_requests.each do |coaching_request| %>
       <tr>
-        <td><%= coaching_request.user %></td>
+        <td><%= coaching_request.user.name %></td>
+        <td><%= coaching_request.user.email %></td>
+        <td><%= coaching_request.user.phone %></td>
         <td><%= coaching_request.submitted_at %></td>
         <td><%= coaching_request.description %></td>
+        <td><%= coaching_request.coaching_type %></td>
         <td><%= coaching_request.status %></td>
         <td><%= link_to 'Show', coaching_request %></td>
         <td><%= link_to 'Edit', edit_coaching_request_path(coaching_request) %></td>

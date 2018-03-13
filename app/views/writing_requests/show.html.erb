@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @writing_request.user %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @writing_request.company %>
+</p>
+
+<p>
+  <strong>Submitted at:</strong>
+  <%= @writing_request.submitted_at %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @writing_request.description %>
+</p>
+
+<%= link_to 'Edit', edit_writing_request_path(@writing_request) %> |
+<%= link_to 'Back', writing_requests_path %>

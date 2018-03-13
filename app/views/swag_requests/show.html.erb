@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @swag_request.user %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @swag_request.quantity %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @swag_request.gender %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @swag_request.size %>
+</p>
+
+<%= link_to 'Edit', edit_swag_request_path(@swag_request) %> |
+<%= link_to 'Back', swag_requests_path %>

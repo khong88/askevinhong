@@ -4,7 +4,7 @@ class SpeakingRequestsController < ApplicationController
   end
   
   def create
-    @user = User.create(name: params[:username], email: params[:email])
+    @user = User.find_or_create_by(name: params[:name], email: params[:email], phone: params[:phone])
     @speaking_request = SpeakingRequest.create(
       user_id: @user.id, 
       event_date: params[:event_date], 

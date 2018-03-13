@@ -1,7 +1,7 @@
 <%= form_tag '/speaking_requests', method: :post do |f| %>
   <div class="field">
-    <%= label_tag :username %>
-    <%= text_field_tag :username %>
+    <%= label_tag :name %>
+    <%= text_field_tag :name %>
   </div>
   
   <div class="field">
@@ -9,7 +9,11 @@
     <%= text_field_tag :email %>
   </div>
   
-
+  <div class="field">
+    <%= label_tag :phone %>
+    <%= text_field_tag :phone %>
+  </div>
+  
   <div class="field">
     <%= label_tag :event_name %>
     <%= text_field_tag :event_name %>

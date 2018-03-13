@@ -1,0 +1,47 @@
+<%= form_for(advisor_request) do |f| %>
+  <% if advisor_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(advisor_request.errors.count, "error") %> prohibited this advisor_request from being saved:</h2>
+
+      <ul>
+      <% advisor_request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :company_id %>
+    <%= f.text_field :company_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :submitted_at %>
+    <%= f.date_select :submitted_at %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :industry %>
+    <%= f.text_field :industry %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

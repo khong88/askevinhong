@@ -1,37 +1,31 @@
-<%= form_for(coaching_request) do |f| %>
-  <% if coaching_request.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(coaching_request.errors.count, "error") %> prohibited this coaching_request from being saved:</h2>
-
-      <ul>
-      <% coaching_request.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<%= form_tag '/coaching_requests', method: :post do |f| %>
   <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
+    <%= label_tag :name %>
+    <%= text_field_tag :name %>
   </div>
-
+  
   <div class="field">
-    <%= f.label :submitted_at %>
-    <%= f.datetime_select :submitted_at %>
+    <%= label_tag :email %>
+    <%= text_field_tag :email %>
   </div>
-
+  
   <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= label_tag :phone %>
+    <%= text_field_tag :phone %>
   </div>
+  
+  <div class="field">
+    <%= label_tag :coaching_type %>
+    <%= select_tag :coaching_type, options_for_select([['Career Coaching', 'Career Coaching'], ['Salary Negotiation', 'Salary Negotiation'], 
+    ['Promotions at Work', 'Promotions at Work'], ['Starting a New Business', 'Starting a New Business'], ['Life Advice', 'Life Advice'], ['Other', 'Other']]) %>
+  </div>  
 
   <div class="field">
-    <%= f.label :status %>
-    <%= f.text_field :status %>
+    <%= label_tag :description %>
+    <%= text_area_tag :description %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag 'Request for Coaching' %>
   </div>
 <% end %>

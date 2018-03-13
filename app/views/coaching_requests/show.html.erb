@@ -1,8 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @coaching_request.user %>
+  <strong>Username:</strong>
+  <%= @coaching_request.user.name %>
+</p>
+
+<p>
+  <strong>User Email:</strong>
+  <%= @coaching_request.user.email %>
+</p>
+
+<p>
+  <strong>User Phone:</strong>
+  <%= @coaching_request.user.phone %>
 </p>
 
 <p>
@@ -13,6 +23,11 @@
 <p>
   <strong>Description:</strong>
   <%= @coaching_request.description %>
+</p>
+
+<p>
+  <strong>Coaching Type:</strong>
+  <%= @coaching_request.coaching_type %>
 </p>
 
 <p>

@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Advisor Requests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Company</th>
+      <th>Submitted at</th>
+      <th>Description</th>
+      <th>Industry</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @advisor_requests.each do |advisor_request| %>
+      <tr>
+        <td><%= advisor_request.user %></td>
+        <td><%= advisor_request.company %></td>
+        <td><%= advisor_request.submitted_at %></td>
+        <td><%= advisor_request.description %></td>
+        <td><%= advisor_request.industry %></td>
+        <td><%= advisor_request.status %></td>
+        <td><%= link_to 'Show', advisor_request %></td>
+        <td><%= link_to 'Edit', edit_advisor_request_path(advisor_request) %></td>
+        <td><%= link_to 'Destroy', advisor_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Advisor Request', new_advisor_request_path %>

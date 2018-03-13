@@ -1,0 +1,2 @@
+module WritingRequestsHelper
+end

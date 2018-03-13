@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Swag Requests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Quantity</th>
+      <th>Gender</th>
+      <th>Size</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @swag_requests.each do |swag_request| %>
+      <tr>
+        <td><%= swag_request.user %></td>
+        <td><%= swag_request.quantity %></td>
+        <td><%= swag_request.gender %></td>
+        <td><%= swag_request.size %></td>
+        <td><%= link_to 'Show', swag_request %></td>
+        <td><%= link_to 'Edit', edit_swag_request_path(swag_request) %></td>
+        <td><%= link_to 'Destroy', swag_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Swag Request', new_swag_request_path %>
