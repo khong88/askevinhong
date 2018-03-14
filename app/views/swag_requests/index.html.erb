@@ -2,10 +2,13 @@
 
 <h1>Swag Requests</h1>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
-      <th>User</th>
+      <th>User Name</th>
+      <th>User Email</th>
+      <th>Phone</th>
+      <th>Address</th>
       <th>Quantity</th>
       <th>Gender</th>
       <th>Size</th>
@@ -16,7 +19,10 @@
   <tbody>
     <% @swag_requests.each do |swag_request| %>
       <tr>
-        <td><%= swag_request.user %></td>
+        <td><%= swag_request.user.name %></td>
+        <td><%= swag_request.user.email %></td>
+        <td><%= swag_request.user.phone %></td>
+        <td><%= swag_request.user.address %></td>
         <td><%= swag_request.quantity %></td>
         <td><%= swag_request.gender %></td>
         <td><%= swag_request.size %></td>

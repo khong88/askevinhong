@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180313032407) do
+ActiveRecord::Schema.define(version: 20180314025214) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -33,8 +33,9 @@ ActiveRecord::Schema.define(version: 20180313032407) do
     t.text     "description"
     t.string   "industry"
     t.string   "status"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "advising_type"
     t.index ["company_id"], name: "index_advisor_requests_on_company_id"
     t.index ["user_id"], name: "index_advisor_requests_on_user_id"
   end
@@ -82,8 +83,10 @@ ActiveRecord::Schema.define(version: 20180313032407) do
     t.integer  "quantity"
     t.string   "gender"
     t.string   "size"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "item"
+    t.text     "description"
     t.index ["user_id"], name: "index_swag_requests_on_user_id"
   end
 
@@ -95,6 +98,7 @@ ActiveRecord::Schema.define(version: 20180313032407) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "phone"
+    t.string   "address"
   end
 
   create_table "writing_requests", force: :cascade do |t|

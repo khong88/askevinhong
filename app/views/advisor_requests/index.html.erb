@@ -2,12 +2,15 @@
 
 <h1>Advisor Requests</h1>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
-      <th>User</th>
-      <th>Company</th>
-      <th>Submitted at</th>
+      <th>User Name</th>
+      <th>User Email</th>
+      <th>Phone</th>
+      <th>Company Name</th>
+      <th>Company Size</th>
+      <th>Company Industry</th>
       <th>Description</th>
       <th>Industry</th>
       <th>Status</th>
@@ -18,12 +21,13 @@
   <tbody>
     <% @advisor_requests.each do |advisor_request| %>
       <tr>
-        <td><%= advisor_request.user %></td>
-        <td><%= advisor_request.company %></td>
-        <td><%= advisor_request.submitted_at %></td>
+        <td><%= advisor_request.user.name %></td>
+        <td><%= advisor_request.user.email %></td>
+        <td><%= advisor_request.user.phone %></td>
+        <td><%= advisor_request.company.name %></td>
+        <td><%= advisor_request.company.size %></td>
+        <td><%= advisor_request.company.industry %></td>
         <td><%= advisor_request.description %></td>
-        <td><%= advisor_request.industry %></td>
-        <td><%= advisor_request.status %></td>
         <td><%= link_to 'Show', advisor_request %></td>
         <td><%= link_to 'Edit', edit_advisor_request_path(advisor_request) %></td>
         <td><%= link_to 'Destroy', advisor_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>

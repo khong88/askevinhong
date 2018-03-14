@@ -1,37 +1,57 @@
-<%= form_for(swag_request) do |f| %>
-  <% if swag_request.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(swag_request.errors.count, "error") %> prohibited this swag_request from being saved:</h2>
-
-      <ul>
-      <% swag_request.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<%= form_tag '/swag_requests', method: :post do |f| %>
   <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
+    <%= label_tag :name %>
+    <%= text_field_tag :name, "", class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :quantity %>
-    <%= f.number_field :quantity %>
+    <%= label_tag :email %>
+    <%= text_field_tag :email, "", class: "form-control" %>
   </div>
+  
+  <div class="field">
+    <%= label_tag :phone %>
+    <%= text_field_tag :phone, "", class: "form-control" %>
+  </div>  
 
   <div class="field">
-    <%= f.label :gender %>
-    <%= f.text_field :gender %>
+    <%= label_tag :address %>
+    <%= text_field_tag :address, "", class: "form-control" %>
   </div>
 
+ <div class="field">
+    <%= label_tag :item %>
+    <%= select_tag :item, options_for_select([['Sweater', 'Sweater'], 
+    ['V-Neck', 'V-Neck'], ['Cap', 'Cap']]), class: "form-control" %>
+  </div>
+  
+ <div class="field">
+    <%= label_tag :gender %>
+    <%= select_tag :gender, options_for_select([['male', 'male'], 
+    ['female', 'female']]), class: "form-control" %>
+  </div>   
+  
+   <div class="field">
+    <%= label_tag :size %>
+    <%= select_tag :size, options_for_select([['Extra Small', 'Extra Small'], 
+    ['Small', 'Small'], ['Medium', 'Medium'], ['Large', 'Large'], ['Extra Large', 'Extra Large'],
+    ['Other', 'Other']]), class: "form-control" %>
+  </div> 
+  
   <div class="field">
-    <%= f.label :size %>
-    <%= f.text_field :size %>
+    <%= label_tag :quantity %>
+    <%= text_field_tag :quantity, "", class: "form-control" %>
+  </div>
+  
+  <div class="field">
+    <%= label_tag :description %>
+    <%= text_area_tag :description, "", class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+  <button class="btn btn-primary">
+    Request for Swag
+  </button>
   </div>
 <% end %>
+
