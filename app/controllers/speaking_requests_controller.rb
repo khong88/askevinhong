@@ -4,14 +4,28 @@ class SpeakingRequestsController < ApplicationController
   end
   
   def create
-    @user = User.find_or_create_by(name: params[:name], email: params[:email], phone: params[:phone])
-    @speaking_request = SpeakingRequest.create(
-      user_id: @user.id, 
-      event_date: params[:event_date], 
-      event_name: params[:event_name],
-      description: params[:description]
+    @user = User.find_or_initialize_by(
+      name: params[:name], 
+      email: params[:email], 
+      phone: params[:phone]
+    )
+    
+    if @user.save
+      @speaking_request = SpeakingRequest.new(
+        user_id: @user.id, 
+        event_date: params[:event_date], 
+        event_name: params[:event_name],
+        description: params[:description]
       )
-    redirect_to speaking_requests_path
+      
+      if @speaking_request.save
+        redirect_to root_url, notice: 'Thanks for submitting your request. We will get back to you soon!'
+      else
+        render :new
+      end
+    else
+      render :new
+    end
   end
   
   def index
