@@ -1,3 +1,27 @@
+<% if @user && @user.errors.any? %>
+  <% @user.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<% if @company && @company.errors.any? %>
+  <% @company.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<% if @writing_request && @writing_request.errors.any? %>
+  <% @writing_request.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
 <%= form_tag '/writing_requests', method: :post do |f| %>
   <div class="field">
     <%= label_tag :name %>

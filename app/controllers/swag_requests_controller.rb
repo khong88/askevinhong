@@ -18,7 +18,7 @@ class SwagRequestsController < ApplicationController
       gender: params[:gender],
       quantity: params[:quantity]
     )
-    redirect_to swag_requests_path
+    redirect_to root_url, notice: 'Thanks for submitting your request. We will get back to you soon!'
   end
   
   def index

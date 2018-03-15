@@ -12,7 +12,7 @@ class CoachingRequestsController < ApplicationController
       description: params[:description],
       coaching_type: params[:coaching_type]
       )
-    redirect_to coaching_requests_path
+    redirect_to root_url, notice: 'Thanks for submitting your request. We will get back to you soon!'
   end
   
   def index

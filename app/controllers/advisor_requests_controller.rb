@@ -22,7 +22,7 @@ class AdvisorRequestsController < ApplicationController
       advising_type: params[:advisor_type]
     )
     
-    redirect_to advisor_requests_path
+    redirect_to root_url, notice: 'Thanks for submitting your request. We will get back to you soon!'
   end
   
   def index
