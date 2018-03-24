@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
   resources :advisor_requests
   resources :swag_requests
   resources :writing_requests
