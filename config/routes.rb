@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
-  resources :advisor_requests
-  resources :swag_requests
-  resources :writing_requests
-  resources :speaking_requests
-  resources :coaching_requests
+  resources :advisor_requests, only: %i[new create]
+  resources :swag_requests, only: %i[new create]
+  resources :writing_requests, only: %i[new create]
+  resources :speaking_requests, only: %i[new create]
+  resources :coaching_requests, only: %i[new create]
   resources :users
-  resources :inquiries
   resources :companies
+  resources :inquiries, only: %i[new create]
   ActiveAdmin.routes(self)
   
   root 'home#index'
